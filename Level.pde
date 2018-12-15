@@ -19,13 +19,13 @@ class Level
       tiles[i] = new Tile();
     }
     for (int i=0; i<candies.length; i++) {
-      candies[i] = new Candy(false);
+      candies[i] = new Candy();
     }
     for (int i=0; i<skeletons.length; i++) {
       skeletons[i] = new Skeleton();
     }
     for (int i=0; i<monsters.length; i++) {
-      monsters[i] = new Monster();
+      monsters[i] = new Monster(false);
     }
 
     int currentTile=0;

@@ -26,7 +26,7 @@ class Skeleton {
   //class methods
   void display()
   {
-    if (isOn) {
+    //if (isOn) {
       //display frame from sprite sheet with Magic Numbers (frame 0 starts at (0, 0) with a size of 62X62 pixels):
       if (skeletonId==0) {
         PImage skelly1 = spriteSheet.get(0 + (frame * w), 0, w, h); 
@@ -46,7 +46,7 @@ class Skeleton {
         //ticksLast = millis(); //adds up time overshooting error
         ticksLast += delta; //avoids adding up error
       }
-    }
+    //}
   }
 
   void addSkeleton(int posX, int posY, boolean s)

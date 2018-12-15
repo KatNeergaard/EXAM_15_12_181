@@ -8,11 +8,11 @@ GAME_STATES OVERVIEW
 
 TO-DO
 
-FIX PLAYER START COORDINATES IN LEVELS 3-5
-PARTICLES
-WE NEED TO TURN THINGS COMPLETELY OFF!
+PARTICLES!!!
 
 COLLISION DETECTION
+- WE NEED TO TURN THINGS COMPLETELY OFF!
+- FIX PLAYER START COORDINATES IN LEVELS 3-5
 - Collision detection - finish on all other classes that needs collision
 - Make stuff happen on collision detection!
 - IF 2-PLAYER: they both need to collide with the exit before the level changes. JESPERS suggestion: make an boolean array - when it is true that BOTH players have collided - then change + remember: use playercount when going through player array

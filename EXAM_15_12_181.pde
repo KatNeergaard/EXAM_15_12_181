@@ -3,7 +3,6 @@ HEADER
  REMEMBER TO CREDIT THE CREATORS OF SPRITESHEETS ETC
  Note when we have used other peoples code
  MUSIC: Slagsmålsklubben -  Yrsel 606
- TESTTESTTEST kl 16:09
  */
 
 import ddf.minim.*;

@@ -18,9 +18,10 @@ class Monster {
   boolean isOn=false;
 
   //constructor
-  Monster() {
+  Monster(boolean o) {
     spriteSheet = loadImage("mon1.png"); //250x250 pixels
     speed = 2;
+    o=isOn;
   }
 
   //class methods
