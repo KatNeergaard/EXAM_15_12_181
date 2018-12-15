@@ -3,7 +3,7 @@ HEADER
  REMEMBER TO CREDIT THE CREATORS OF SPRITESHEETS ETC
  Note when we have used other peoples code
  MUSIC: Slagsmålsklubben -  Yrsel 606
- HEJJJ KAROLINE
+ HEJJJ KAROLINE is this live
  */
  
 import ddf.minim.*;
