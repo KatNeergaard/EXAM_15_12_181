@@ -42,8 +42,8 @@ class Tile
         (playerY+playerH >= yPos) &&
         (playerY < yPos+tileHeight)) 
       { 
-        switchOff(); // stop checking for collision on the same tile again and again!
-        players[i].stopMoving();
+        //switchOff(); // stop checking for collision on the same tile again and again!
+        players[i].stopMoving(); //reaction for colliosion
         return true;
       }
     }

@@ -42,7 +42,7 @@ class Candy {
       if ((playerX+playerW>= xPos) &&
         (playerX < xPos + candyWidth) &&
         (playerY+playerH >= yPos) &&
-        (playerY + playerH < yPos + candyHigth))
+        (playerY < yPos + candyHigth))
       {
         score+=10; //reaction to collision
         addCandy(0, 0, false);
