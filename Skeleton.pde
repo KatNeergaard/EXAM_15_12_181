@@ -17,6 +17,10 @@ class Skeleton {
   //constructor
   Skeleton() {
     spriteSheet = loadImage("mon2.png"); //500x500 pixels
+    for (int i = 0; i < sparks.length; i++)
+    {
+      sparks[i] = new Spark((xPos*0.5), (yPos*0.5), random(-6, 10), random(-12, 0));
+    }
   }
 
   //class methods
@@ -63,17 +67,14 @@ class Skeleton {
       float shotX=shots[i].getX();
       int shotY=shots[i].getY();
       int shotH=shots[i].getH();
-      ;
       int shotW=shots[i].getW();
       if ((shotX+shotW>= xPos) &&
         (shotX < xPos + w) &&
         (shotY+shotH >= yPos) &&
         (shotY + shotH < yPos + h))
       {
-        //score+=10; //reaction to collision - THIS SHOULD BE CHANGED ;) 
         for (int s = 0; s < sparks.length; s++)
         {
-         sparks[s] = new Spark((xPos), (yPos), random(-3, 3), random(-6, 0));
           sparks[s].sparksExplode();
         }
         addSkeleton(0, 0, false); 

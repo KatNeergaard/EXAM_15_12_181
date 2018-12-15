@@ -42,11 +42,25 @@ class Tile
         (playerY+playerH >= yPos) &&
         (playerY < yPos+tileHeight)) 
       { 
-        //switchOff(); // stop checking for collision on the same tile again and again!
         players[i].stopMoving(); //reaction for colliosion
         return true;
       }
     }
     return false;
+  }
+
+  int getX() {
+    return xPos;
+  }
+
+  int getY() {
+    return yPos;
+  }
+  float getH() {
+    return tileHeight;
+  }
+
+  float getW() {
+    return tileWidth;
   }
 }

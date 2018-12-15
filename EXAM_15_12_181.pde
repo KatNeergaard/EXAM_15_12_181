@@ -3,9 +3,8 @@ HEADER
  REMEMBER TO CREDIT THE CREATORS OF SPRITESHEETS ETC
  Note when we have used other peoples code
  MUSIC: Slagsmålsklubben -  Yrsel 606
- HEJJJ KAROLINE is this live
  */
- 
+
 import ddf.minim.*;
 Minim minim;
 AudioPlayer[] audioPlayers = new AudioPlayer[4];
@@ -44,7 +43,8 @@ void setup()
   setControls(); //setting the controls for the players
   setupLevels();
   setupShots();
-  setupSparks();
+  //setupMonsters();
+  //setupSparks();
   loadScoreFile();
   setupAudio();
 
@@ -172,12 +172,12 @@ void setupLevels() {
   }
 }
 
-void setupSparks() {
-  for (int i = 0; i < sparks.length; i++)
-  {
-    sparks[i] = new Spark((width * 0.5), (height * 0.5), random(-6, 10), random(-12, 0));
-  }
-}
+//void setupSparks() {
+//  for (int i = 0; i < sparks.length; i++)
+//  {
+//    sparks[i] = new Spark((width*0.5), (height * 0.5), random(-6, 10), random(-12, 0));
+//  }
+//}
 
 void setupAudio() {
   minim = new Minim(this);
@@ -223,7 +223,7 @@ void showGameOverScreen() {
 
 void endGame() { //when the player has completed the game (i.e. not gameover)
   drawEndscreenGraphics();
-  addScoreToHighscoreList(); //HIGHSCORELIST!
+  addScoreToHighscoreList(); 
   saveFile();
   sortAndShowHighscoreList();
   image(highScoreIMG, 0, 0, 800, 400);

@@ -6,7 +6,7 @@ class Level
   Candy[] candies = new Candy[50];
   Skeleton[] skeletons = new Skeleton[50];
   Exit exit;
-  Monster[] monsters = new Monster[20];
+  Monster[] monsters = new Monster[30];
 
   //constructer
   Level(int l)
@@ -19,7 +19,7 @@ class Level
       tiles[i] = new Tile();
     }
     for (int i=0; i<candies.length; i++) {
-      candies[i] = new Candy();
+      candies[i] = new Candy(false);
     }
     for (int i=0; i<skeletons.length; i++) {
       skeletons[i] = new Skeleton();
@@ -79,14 +79,13 @@ class Level
     if (exit.collidingWithPlayer()==true) {
       println("EXIT WORKS");
       weAreInLevel++;
-
-      for (int i=0; i<players.length; i++) {
+      for (int i=0; i<playerCount; i++) {
         players[i].resetPlayerCoordinate();
       }
     }
     for (int i=0; i <skeletons.length; i++) {
       if (skeletons[i].areYouHit()==true) {
-        println("shooting skeletons WORKS");//What could we insert instead of printing? WOuld it make sense to command the skeleton to dissapear here?
+        println("shooting skeletons WORKS");
       }
     }
     for (int i=0; i <candies.length; i++) {
@@ -95,10 +94,42 @@ class Level
       }
     }
     for (int i=0; i <tiles.length; i++) {
-      if (tiles[i].checkPlayerAndTileCollision()==true) {
-        println("colliding with tile "+i);
+      if (tiles[i].checkPlayerAndTileCollision()==true)
+      {
+        println("player colliding with tile "+i);
       }
     }
+    //for (int i=0; i< monsters.length; i++) {
+    //  if (monsters[i].checkMonsterAndTileCollision()==true) {
+    //    println("monsters colliding with tiles");
+    //  }
+    //}
+    if (checkMonsterAndTileCollision()==true);
+    {
+      println("monsters colliding with tiles");
+    }
+  }
+
+  boolean checkMonsterAndTileCollision() {
+    for (int i=0; i<tiles.length; i++) {
+      if (!tiles[i].isOn) { 
+        return false;
+      }
+      for (int m=0; m< monsters.length; m++) {
+        if (!monsters[m].isOn) {
+          return false;
+        }
+        if ((monsters[m].getX()+monsters[m].getW()>=tiles[i].getX()) &&
+          (monsters[m].getX()< tiles[i].getX()+tiles[i].getW()) &&
+          (monsters[m].getY()+monsters[m].getH() >= tiles[i].getY()) &&
+          (monsters[m].getY() < tiles[i].getY()+tiles[i].getH())) 
+        { 
+          monsters[m].stopMoving(); //reaction for colliosion
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   void resetGame() {
@@ -119,7 +150,6 @@ class Level
         monsters[i].isOn=false;
       }
       exit.isOn=false;
-      ;
     }
   }
 }

@@ -10,16 +10,17 @@ class Candy {
   int candyHigth = 20;
 
   //constructor
-  Candy() {
+  Candy(boolean o) {
     int id = int(random(0, 3));
     candy = loadImage("c"+id+".png");
+    o=isOn;
   }
 
   //class methods
   void display() {
-    if (isOn) {
+   // if (isOn) {
       image(candy, xPos, yPos, candyWidth, candyHigth);
-    }
+    //}
   }
 
   void addCandy(int posX, int posY, boolean s) {
