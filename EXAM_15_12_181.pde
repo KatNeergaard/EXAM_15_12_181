@@ -207,7 +207,7 @@ void showAndUpdateLevels() {
   for (int i=0; i<levels.length; i++) {
     if (weAreInLevel < levels.length) {
       levels[weAreInLevel].display(); //displays the current level
-      levels[i].checkAllCollisions();
+      levels[weAreInLevel].checkAllCollisions();
     } else {
       gamestate=3;
     }
